@@ -14,11 +14,11 @@ I used Lucas-kanade tracter to track the feature points.
 
 * Go to the repositiory folder `cd video_motion_compensation` and create a build directory `mkdir build`. Go to the build directory `cd build`.
 * Run the following commands to build the project.       
-'cmake ..'     
-'make '
+`cmake ..`    
+`make `
 
 * The executable will be generated in the build folder. To run the program, use the following command.     
-'./VideoStabilization ../dataset/motion_video2.mp4'
+`./VideoStabilization ../dataset/motion_video2.mp4`
 
 ## Results 
 ### Original input video
