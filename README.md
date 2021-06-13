@@ -30,7 +30,7 @@ I used Lucas-kanade tracter to track the feature points.
 ![Result](https://github.com/sakshikakde/video_motion_compensation/blob/main/readme/motion_compensated_video.gif)
 
 ## Improvement scope
-I am using an affine warp for this example. As it can be seen, the output is a little noisy. It can be used by using projective transformations.
+I am using an affine warp for this example. As it can be seen, the output is a little noisy. It can be improved by using projective transformations.
 
 
 ## Reference
