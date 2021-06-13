@@ -14,7 +14,7 @@ int main(int argc, char** argv )
     int w = int(cap.get(CAP_PROP_FRAME_WIDTH));
     int h = int(cap.get(CAP_PROP_FRAME_HEIGHT));
     double fps = cap.get(CAP_PROP_FPS);
-    VideoWriter out("../results/video_out.avi", cv::VideoWriter::fourcc('M','J','P','G'), fps, Size(2 * w, h));
+    VideoWriter out("../results/motion_compensated_video.mp4", cv::VideoWriter::fourcc('M','J','P','G'), fps, Size(2 * w, h));
 
 
     Mat curr, curr_gray;
@@ -68,6 +68,7 @@ int main(int argc, char** argv )
 
         hconcat(curr, out_frame, out_frame);
         imshow("motion_compensated_output", out_frame);
+        out.write(out_frame);
         waitKey(10);
 
     }
