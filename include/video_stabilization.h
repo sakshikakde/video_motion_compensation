@@ -97,39 +97,6 @@ vector<Trajectory> cumSum(vector <Trajectory> trajectory_prior, TransformParam t
 }
 
 
-vector <Trajectory> smoothenTraj(vector <Trajectory>& trajectory, int radius)
-{
-  vector <Trajectory> smoothed_trajectory; 
-  for(size_t i=0; i < trajectory.size(); i++) {
-      double sum_x = 0;
-      double sum_y = 0;
-      double sum_a = 0;
-      int count = 0;
-
-      for(int j=-radius; j <= radius; j++) {
-          if(i+j >= 0 && i+j < trajectory.size()) {
-              sum_x += trajectory[i+j].x;
-              sum_y += trajectory[i+j].y;
-              sum_a += trajectory[i+j].a;
-
-              count++;
-          }
-      }
-
-      double avg_a = sum_a / count;
-      double avg_x = sum_x / count;
-      double avg_y = sum_y / count;
-
-      smoothed_trajectory.push_back(Trajectory(avg_x, avg_y, avg_a));
-  }
-
-  return smoothed_trajectory; 
-}
 
 
-void fixBorder(Mat &frame_stabilized)
-{
-  Mat T = getRotationMatrix2D(Point2f(frame_stabilized.cols/2, frame_stabilized.rows/2), 0, 1.04); 
-  warpAffine(frame_stabilized, frame_stabilized, T, frame_stabilized.size()); 
-}
 
