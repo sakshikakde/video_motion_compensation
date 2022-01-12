@@ -1,6 +1,6 @@
 # Motion Compensation using Affine warp
 ## Introduction
-The aim of this project is to compensate for the motion in a video. Intutively, we foirst detect the motion and then apply a transformation that is opposite to the detected motion. The fooling are the steps followed:
+The aim of this project is to compensate for the motion in a video. Intutively, we first detect the motion and then apply a transformation that is opposite to the detected motion. The fooling are the steps followed:
 * Detect feature points 
 * Track those feature points
 * Estimate motion
